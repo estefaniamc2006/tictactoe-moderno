@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe Moderno</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Tic-Tac-Toe</h1>
+            <div id="status" class="status-turn">Turno de: <span class="player-x" id="current-player">X</span></div>
+        </header>
+
+        <!-- Cuadrícula del Juego -->
+        <div class="board" id="board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+
+        <!-- Panel de Ganador / Alerta Atractiva -->
+        <div id="winner-banner" class="winner-banner hidden">
+            <h2 id="winner-text">¡Jugador X Gana! 🎉</h2>
+            <button id="restart-btn" class="btn-primary">Jugar de nuevo</button>
+        </div>
+
+        <!-- Historial Compacto -->
+        <div class="history-panel">
+            <h3>Historial de Movimientos</h3>
+            <div id="history-list" class="history-list">
+                <button class="history-btn active" data-move="0">Ir al inicio</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

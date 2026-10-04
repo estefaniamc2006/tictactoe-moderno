@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e1b4b);
+    color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 420px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.game-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.status-turn {
+    font-size: 1.1rem;
+    margin-top: 5px;
+    color: #cbd5e1;
+}
+
+.player-x { color: #38bdf8; font-weight: bold; }
+.player-o { color: #f43f5e; font-weight: bold; }
+
+/* Tablero Estilizado */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    aspect-ratio: 1;
+    margin-bottom: 20px;
+}
+
+.cell {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+.cell:hover {
+    background: rgba(51, 65, 85, 0.9);
+    transform: translateY(-2px);
+}
+
+.cell.x { color: #38bdf8; text-shadow: 0 0 10px rgba(56, 189, 248, 0.5); }
+.cell.o { color: #f43f5e; text-shadow: 0 0 10px rgba(244, 63, 94, 0.5); }
+
+/* Banner de Ganador Atractivo */
+.winner-banner {
+    background: linear-gradient(135deg, #10b981, #059669);
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+}
+
+.winner-banner.hidden {
+    display: none;
+}
+
+.winner-banner h2 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #065f46;
+    border: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover {
+    background: #f1f5f9;
+}
+
+/* Historial Compacto */
+.history-panel {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.5);
+    padding: 12px;
+    border-radius: 10px;
+    max-height: 130px;
+    overflow-y: auto;
+}
+
+.history-panel h3 {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #94a3b8;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: #e2e8f0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-align: left;
+    transition: background 0.2s;
+}
+
+.history-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.history-btn.active {
+    background: rgba(56, 189, 248, 0.2);
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
