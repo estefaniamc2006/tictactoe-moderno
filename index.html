@@ -4,45 +4,151 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe Moderno</title>
+
     <link rel="stylesheet" href="style.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <div class="game-container">
-        <header class="game-header">
+
+        <!-- ============================= -->
+        <!-- PANTALLA DE INICIO -->
+        <!-- ============================= -->
+
+        <div id="start-screen" class="start-screen">
+
+            <div class="game-icon">✕ <span>◯</span></div>
+
             <h1>Tic-Tac-Toe</h1>
-            <div id="status" class="status-turn">Turno de: <span class="player-x" id="current-player">X</span></div>
-        </header>
 
-        <!-- Cuadrícula del Juego -->
-        <div class="board" id="board">
-            <div class="cell" data-index="0"></div>
-            <div class="cell" data-index="1"></div>
-            <div class="cell" data-index="2"></div>
-            <div class="cell" data-index="3"></div>
-            <div class="cell" data-index="4"></div>
-            <div class="cell" data-index="5"></div>
-            <div class="cell" data-index="6"></div>
-            <div class="cell" data-index="7"></div>
-            <div class="cell" data-index="8"></div>
-        </div>
+            <p class="welcome-text">
+                ¡Prepárense para jugar!
+            </p>
 
-        <!-- Panel de Ganador / Alerta Atractiva -->
-        <div id="winner-banner" class="winner-banner hidden">
-            <h2 id="winner-text">¡Jugador X Gana! 🎉</h2>
-            <button id="restart-btn" class="btn-primary">Jugar de nuevo</button>
-        </div>
+            <p class="instructions">
+                Ingresen los nombres de los jugadores para comenzar la partida.
+            </p>
 
-        <!-- Historial Compacto -->
-        <div class="history-panel">
-            <h3>Historial de Movimientos</h3>
-            <div id="history-list" class="history-list">
-                <button class="history-btn active" data-move="0">Ir al inicio</button>
+            <div class="players-form">
+
+                <div class="input-group">
+                    <label for="player1">
+                        Jugador 1 <span class="player-x">X</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="player1"
+                        placeholder="Nombre del jugador 1"
+                        maxlength="20"
+                        autocomplete="off"
+                    >
+                </div>
+
+
+                <div class="input-group">
+                    <label for="player2">
+                        Jugador 2 <span class="player-o">O</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="player2"
+                        placeholder="Nombre del jugador 2"
+                        maxlength="20"
+                        autocomplete="off"
+                    >
+                </div>
+
             </div>
+
+            <p id="error-message" class="error-message"></p>
+
+            <button id="start-btn" class="start-btn">
+                Comenzar partida
+                <span>→</span>
+            </button>
+
         </div>
+
+
+        <!-- ============================= -->
+        <!-- JUEGO -->
+        <!-- ============================= -->
+
+        <div id="game-screen" class="game-screen hidden">
+
+            <header class="game-header">
+
+                <h1>Tic-Tac-Toe</h1>
+
+                <div id="status" class="status-turn">
+                    Turno de:
+                    <span class="player-x" id="current-player"></span>
+                </div>
+
+            </header>
+
+
+            <!-- Cuadrícula del Juego -->
+
+            <div class="board" id="board">
+
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+
+            </div>
+
+
+            <!-- Panel de Ganador -->
+
+            <div id="winner-banner" class="winner-banner hidden">
+
+                <h2 id="winner-text">
+                    ¡Jugador Gana! 🎉
+                </h2>
+
+                <button id="restart-btn" class="btn-primary">
+                    Jugar de nuevo
+                </button>
+
+            </div>
+
+
+            <!-- Historial -->
+
+            <div class="history-panel">
+
+                <h3>Historial de Movimientos</h3>
+
+                <div id="history-list" class="history-list">
+
+                    <button class="history-btn active" data-move="0">
+                        Ir al inicio
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
+
     <script src="script.js"></script>
+
 </body>
 </html>
